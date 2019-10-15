@@ -1,7 +1,7 @@
 @csrf
 
 <div class="Form-group row">
-    <label for="judul" class="col-md-4 col-Form-label text-md-right">{{ __('Judul') }}</label>
+    <label for="judul" class="col-md-2 col-Form-label text-md-right">{{ __('Judul') }}</label>
 
     <div class="col-md-6">
             
@@ -16,7 +16,7 @@
 </div>
 
 <div class="Form-group row">
-    <label for="kategori_berita_id" class="col-md-4 col-Form-label text-md-right">{{ __('KategoriBerita') }}</label>
+    <label for="kategori_berita_id" class="col-md-2 col-Form-label text-md-right">{{ __('KategoriBerita') }}</label>
 
     <div class="col-md-6">
             {!! Form::select('kategori_berita_id',$KategoriBerita,null,["class"=>"Form-control","required"]) !!}
@@ -30,10 +30,10 @@
 </div>
 
 <div class="Form-group row">
-    <label for="isi" class="col-md-4 col-Form-label text-md-right">{{ __('Isi') }}</label>
+    <label for="isi" class="col-md-2 col-Form-label text-md-right">{{ __('Isi') }}</label>
 
-    <div class="col-md-6">
-            <input id="isi" type="text" class="Form-control @error('isi') is-invalid @enderror" name="isi" value="{{ old('isi') }}" required>
+    <div class="col-md-10">
+            {!! Form::textarea('isi', null,['class'=>'form-control']); !!}
 
             @error('isi')
             <span class="invalid-feedback" role="alert">
@@ -46,7 +46,7 @@
 {!! Form::hidden('users_id',Auth::id() ); !!}
 
 <div class="Form-group row mb-0">
-    <div class="col-md-0 offset-md-4">
+    <div class="col-md-0 offset-md-2">
          <button type="submit" class="btn btn-primary">
             {{ __('Simpan Data') }}
          </button>

@@ -34,7 +34,6 @@ class GaleriController extends Controller
 
         return view('galeri.create',compact('KategoriGaleri'));
     }
-
     public function store(Request $request){
         $input=$request->all();
         galeri::create($input);
@@ -72,5 +71,12 @@ class GaleriController extends Controller
 
         $Galeri->delete();
         return redirect(route('galeri.index'));
+    }
+    public function trash(){
+        $listGaleri=Galeri::onlyTrashed(); //select * from galeri
+
+        //blade
+        return view('galeri.index',compact('listGaleri'));
+        //return view( view: 'galeri.index')->with('data',$listGaleri);
     }
 }

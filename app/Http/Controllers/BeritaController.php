@@ -73,4 +73,11 @@ class BeritaController extends Controller
         $Berita->delete();
         return redirect(route('berita.index'));
     }
+    public function trash(){
+        $listBerita=Berita::onlyTrashed(); //select * from berita
+
+        //blade
+        return view('berita.index',compact('listBerita'));
+        //return view( view: 'berita.index')->with('data',$listBerita);
+    }
 }

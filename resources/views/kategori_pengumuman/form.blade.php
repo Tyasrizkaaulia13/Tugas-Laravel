@@ -1,7 +1,7 @@
 @csrf
 
 <div class="Form-group row">
-    <label for="nama" class="col-md-4 col-Form-label text-md-right">{{ __('nama') }}</label>
+    <label for="nama" class="col-md-2 col-Form-label text-md-right">{{ __('nama') }}</label>
 
     <div class="col-md-6">
             
@@ -18,7 +18,7 @@
 {!! Form::hidden('users_id',Auth::id() ); !!}
 
 <div class="Form-group row mb-0">
-    <div class="col-md-0 offset-md-4">
+    <div class="col-md-0 offset-md-2">
          <button type="submit" class="btn btn-primary">
             {{ __('Simpan Data') }}
          </button>

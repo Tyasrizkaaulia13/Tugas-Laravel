@@ -73,4 +73,11 @@ class PengumumanController extends Controller
         $Pengumuman->delete();
         return redirect(route('pengumuman.index'));
     }
+    public function trash(){
+        $listPengumuman=Pengumuman::onlyTrashed(); //select * from pengumuman
+
+        //blade
+        return view('pengumuman.index',compact('listPengumuman'));
+        //return view( view: 'pengumuman.index')->with('data',$listPengumuman);
+    }
 }

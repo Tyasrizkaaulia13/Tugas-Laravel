@@ -73,4 +73,11 @@ class ArtikelController extends Controller
         $Artikel->delete();
         return redirect(route('artikel.index'));
     }
+    public function trash(){
+        $listArtikel=Artikel::onlyTrashed(); //select * from artikel
+
+        //blade
+        return view('artikel.index',compact('listArtikel'));
+        //return view( view: 'artikel.index')->with('data',$listArtikel);
+    }
 }
